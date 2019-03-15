@@ -28,3 +28,5 @@ before_script:
   - adb shell input keyevent 82 &
 script:
   - bash ./gradlew build check connectedCheck
+after_success:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)
